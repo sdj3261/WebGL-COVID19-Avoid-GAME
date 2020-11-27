@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Covid-19 Avoid Game</title>
+    <script src="js/three.min.js"></script>
+    <script src="js/Detector.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/THREEx.KeyboardState.js"></script>
+    <script src="js/THREEx.FullScreen.js"></script>
+    <script src="js/THREEx.WindowResize.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <style>
+        body {
+            background-color: #A7EEFF;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto;
+            top: 50px;
+        }
+
+        .score-container {
+            /*background-color: red;*/
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: transform 0.5s 4s;
+        }
+
+        .score-container #score {
+            color: black;
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .stage-container {
+            /*background-color: red;*/
+            position: absolute;
+            top: 2px;
+        margin-left: 600px;
+            transition: transform 0.5s 4s;
+        }
+
+        .stage-container #stage {
+            color: black;
+            top: 5px;
+
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .button {
+            display: inline-block;
+            position: absolute;
+
+            padding: 7px;
+
+            text-decoration: none;
+            text-align: center;
+
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-radius: 0.2em;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5),
+            inset 0 20px 20px rgba(255, 255, 255, 0.2),
+            1px 2px 1px rgba(0, 0, 0, 0.2),
+            0 0 2px 8px rgba(50, 50, 50, 0.1);
+            transition: all 0.3s ease-out;
+            background: orangered;
+
+            font-family: Helvetica, sans-serif;
+            font-size: 1.5em;
+            line-height: 1.5em;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2);
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+
+        .orange { background:#d02211; }
+        .blue { background:#1e83e5; }
+        .green { background:#5f9a2e ; }
+    </style>
+</head>
+
+<body>
+<div id= "pause" class ="button blue" align="left">
+    <button class="button blue">Pause</button>
+</div>
+<div id = "restart" class ="button orange">
+    <button class ="button orange" style ="margin-left:150px">Restart</button>
+</div>
+
+
+<div class="score-container button green">
+    <div id="score"></div>
+</div>
+    <div class="stage-container">
+        <div id="stage" align="center">"Stage 1"</div>
+    </div>
+
+
+<div id="ThreeJS"></div>
+<audio src="sound/crush.m4a" preload="auto" id="explode_sound"></audio>
+<audio src="sound/mask.mp3" preload="auto" id="mask_sound"></audio>
+<script src="js/index.js"></script>
+
+</body>
+</html>
