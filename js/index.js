@@ -260,10 +260,10 @@ function init() {
 
 
     //MovingCube Camera
-
-    var cubeGeometry = new THREE.CubeGeometry(48, 25, 45, 5, 5, 5);
+    var texture = new THREE.TextureLoader().load( 'textures/lego.jpg' );
+    var cubeGeometry = new THREE.CubeGeometry(20, 50, 15, 32);
     var wireMaterial = new THREE.MeshBasicMaterial({
-        color: 0xC71585,
+        map: texture
     });
 
     movingCube = new THREE.Mesh(cubeGeometry, wireMaterial);
@@ -293,7 +293,7 @@ function animate() {
     requestAnimationFrame( animate );
 
     if(score < 0) {
-        stageText.innerText = "Game Over!! Click Restart Button";
+        stageText.innerText = "Game Over!!";
         stageText.style.color ="red";
         pause = true;
     }
@@ -344,7 +344,7 @@ function update() {
         stageText.innerText = "Stage 1";
     }
     else
-        stageText.innerText = "Game Over!! Click Restart Button";
+        stageText.innerText = "Game Over!!";
 
 
     //KeyEvent LEFT,RIGHT
